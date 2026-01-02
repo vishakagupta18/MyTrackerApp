@@ -1,0 +1,6 @@
+@use 'variables' as var;
+
+.primary-btn {
+    background-color: var.$primary;
+    color: var.$white;
+}

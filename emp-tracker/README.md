@@ -73,6 +73,8 @@ export default defineConfig([
 ```
 //Aplication Requirement
 
+Give user an option to select light and dark theme
+
 login for employee (each employee have different login screens) -
 login for employer - 
 
