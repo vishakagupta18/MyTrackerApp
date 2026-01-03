@@ -1,5 +1,11 @@
+@use 'variables' as var;
+
 .flex-col {
     display: flex;
     flex-direction: column;
 }
 
+.form-error {
+    color: var.$error-text;
+    font-size: 12px;
+}
