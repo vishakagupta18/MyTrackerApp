@@ -9,12 +9,23 @@ function Login() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async(e: React.FormEvent) => {
         e.preventDefault();
-        if(username === 'employee' && password === 'emp') {
-            navigate('/dashboard');
+
+        const res = await fetch("http://127.0.0.1:8000/emp/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        });
+
+        if(!res.ok) {
+            setError(res.statusText);
         } else {
-            setError('Invalid username or password');
+            const loginRes = await res.json();
+            navigate('/dashboard');
         }
     }
 
